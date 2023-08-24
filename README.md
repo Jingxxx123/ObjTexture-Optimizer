@@ -24,27 +24,34 @@ Ensure your system has:
    - Debian/Ubuntu: `sudo apt-get install libjpeg-dev libpng-dev`
    - Red Hat/Fedora: `sudo dnf install libjpeg-turbo-devel libpng-devel`
 
-## Usage
-
-1. Ensure your `.obj` files and their contents are within the designated directory. 
-
-2. Start the optimization: `./run_myProject.sh`
-
-3. Upon completion, find the optimized files as `New_OrginalFileName.obj`, `New_OrginalFileName.mtl`, and `spritesheet_#.png` in the directory.
-
 ## File Structure
 
 ### Source Files
 
-- `main.cpp`: Core of ObjTexture Optimizer.
-- `check_image.cpp`: Handles image validation, texture index remapping, and `.obj` file output.
-- `read_mtl.cpp`: Processes `.mtl` files and outputs combined spritesheets.
+- `main.cpp`: The central hub of ObjTexture Optimizer. Orchestrates the processing based on user's input.
+  
+- `check_image.cpp`: Dedicated to image verification, texture index remapping, and outputting the updated `.obj` file.
+  
+- `read_mtl.cpp`: Specializes in parsing and refining `.mtl` files, culminating in an optimized `.mtl` file with consolidated .png spritesheets.
 
 ### Header Files
 
-- `check_image.h`: Complements `check_image.cpp`.
-- `read_mtl.h`: Supports `read_mtl.cpp` with classes like `Coordinate`, `Face`, and more.
+- `check_image.h`: Houses function declarations pertinent to `check_image.cpp`.
+  
+- `read_mtl.h`: Complements `read_mtl.cpp`, encapsulating various classes and methods including `Coordinate`, `Face`, `ImageInfo`, `Material`, `Group`, `Property`, and `Properties`.
 
 ### Scripts
+
+- `run_myProject.sh`: A crafty script that undertakes the task of compiling all source files into the `myProject` executable. Following that, it runs this application on all `.obj` files located within the specified directory.
+
+## Usage
+
+1. Ensure all your `.obj` files along with their associated content are placed in folders within the specified directory.  
+
+2. Start the optimization: `./run_myProject.sh`
+
+3.  Once completed, the directory will be enriched with refined files named `New_OrginalFileName.obj`, `New_OrginalFileName.mtl`, and multiple `spritesheet_#.png` files, all of which encapsulate the enhanced texture data.
+
+
 
 - `run_myProject.sh`: Compiles sources to an executable and runs it on `.obj` files in the directory.
