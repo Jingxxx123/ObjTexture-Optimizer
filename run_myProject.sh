@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Clear previous build artifacts
-rm -f my_program
+rm -f myProject
 
 # Compile the program
 g++ check_image.cpp read_mtl.cpp read_mtl.h -o myProject -lpng -ljpeg 
@@ -11,8 +11,8 @@ if [ $? -eq 0 ]; then
     echo "Compilation successful!"
     
     # Run the program
-    myproject */*.obj #run all obj files
-    #or myproject your_.obj_file_name
+    ./myProject */*.obj #run all obj files
+    #or ./myProject your_.obj_file_name
 
 else
     echo "Compilation failed."
