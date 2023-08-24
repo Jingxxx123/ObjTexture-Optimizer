@@ -27,8 +27,6 @@ Ensure your system has:
 ## File Structure
 
 ### Source Files
-
-- `main.cpp`: The central hub of ObjTexture Optimizer. Orchestrates the processing based on user's input.
   
 - `check_image.cpp`: Dedicated to image verification, texture index remapping, and outputting the updated `.obj` file.
   
